@@ -24,6 +24,10 @@ class _HomeState extends State<Home> {
       'Index 2: School',
       style: optionStyle,
     ),
+    Text(
+      'Index 3: Profile',
+      style: optionStyle,
+    ),
   ];
 
   void _onItemTapped(int index) {
@@ -35,9 +39,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
-      ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -48,16 +49,21 @@ class _HomeState extends State<Home> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Icon(Icons.favorite),
+            label: 'Favorites',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.chat_sharp),
+            label: 'Chats',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle_outlined),
+            label: 'Profile',
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        unselectedItemColor: Colors.grey[500],
+        selectedItemColor: Colors.black,
         onTap: _onItemTapped,
       ),
     );

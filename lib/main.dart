@@ -6,7 +6,7 @@ import 'package:servicegy/pages/auth/input-details.dart';
 import 'package:servicegy/pages/home/home.dart';
 
 void main() {
-  runApp(MaterialApp(initialRoute: '/login', routes: {
+  runApp(MaterialApp(initialRoute: '/dashboard', routes: {
     '/login': (context) => Login(),
     '/otp': (context) => OTP(),
     '/offline': (context) => offline(),
