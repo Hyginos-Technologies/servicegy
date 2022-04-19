@@ -21,7 +21,8 @@ class _OTPState extends State<OTP> {
             return IconButton(
                 icon: const Icon(Icons.arrow_back_ios_new_sharp),
                 onPressed: () {
-                  Navigator.pop(context);
+                  // Navigator.pop(context);
+                  _AreYouSureModal(context);
                 });
           },
         ),
@@ -132,4 +133,76 @@ class _OTPState extends State<OTP> {
       )),
     );
   }
+}
+
+void _AreYouSureModal(context) {
+  showModalBottomSheet<void>(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(20.0),
+        ),
+      ),
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          height: 300,
+          child: Center(
+            child: Column(
+              children: <Widget>[
+                Icon(
+                  Icons.horizontal_rule_rounded,
+                  color: Colors.grey[400],
+                  size: 74.0,
+                ),
+                SizedBox(height: 20.0),
+                Text('Are you sure you want to leave?',
+                    style: TextStyle(
+                        fontFamily: 'MulishRegular',
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w700)),
+                SizedBox(height: 5.0),
+                Text('You will have to reverify your mobile number',
+                    style: TextStyle(
+                        fontFamily: 'MulishRegular',
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey[400])),
+                SizedBox(height: 40.0),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.80,
+                  child: FlatButton(
+                    child: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Text(
+                        'STAY ON THE PAGE',
+                        style: TextStyle(
+                          fontFamily: 'MulishRegular',
+                          fontSize: 20.0,
+                        ),
+                      ),
+                    ),
+                    color: Colors.black,
+                    textColor: Colors.white,
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                ),
+                SizedBox(height: 10.0),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/login');
+                  },
+                  child: Text('BACK TO MOBILE VERIFICATION',
+                      style: TextStyle(
+                        fontFamily: 'MulishRegular',
+                        color: Colors.grey[500],
+                        decoration: TextDecoration.underline,
+                      )),
+                )
+              ],
+            ),
+          ),
+        );
+      });
 }
