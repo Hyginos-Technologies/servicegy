@@ -132,7 +132,7 @@ class _InputDeatilsState extends State<InputDeatils> {
                 color: Colors.black,
                 textColor: Colors.white,
                 onPressed: () {
-                  Navigator.pushNamed(context, '/dashboard');
+                  Navigator.pushNamed(context, '/home');
                 },
               ),
             ),
