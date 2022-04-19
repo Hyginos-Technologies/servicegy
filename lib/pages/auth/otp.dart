@@ -125,7 +125,7 @@ class _OTPState extends State<OTP> {
               color: Colors.black,
               textColor: Colors.white,
               onPressed: () {
-                Navigator.pushNamed(context, '/otp');
+                Navigator.pushNamed(context, '/input-details');
               },
             ),
           ),
